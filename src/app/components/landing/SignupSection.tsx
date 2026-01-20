@@ -8,7 +8,8 @@ export function SignupSection() {
     name: "",
     email: "",
     company: "",
-    instagram: ""
+    instagram: "",
+    etc: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -21,15 +22,16 @@ export function SignupSection() {
     form.append('email', formData.email);
     form.append('company', formData.company);
     form.append('instagram', formData.instagram);
+    form.append('etc', formData.etc);
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbyOrcjtw4SyaEA6w495vCA6-5h0YcKVXhq7G2AVGkKPABIcCwcwhr2ubRx7fMHjpzn-SA/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbwa9jgHTb7vMXe22JtIxjKSXsneR2IWtmnBgCw8BmI-soP3AWAoEPdLS2SGDAlW3BskMQ/exec', {
         method: 'POST',
         body: form
       });
       alert('사전체험 신청이 접수되었습니다! 빠른 시일 내에 연락드리겠습니다.');
       // 폼 초기화
-      setFormData({ name: "", email: "", company: "", instagram: "" });
+      setFormData({ name: "", email: "", company: "", instagram: "", etc: "" });
     } catch (error) {
       alert('오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
       console.error('Form submission error:', error);
@@ -170,6 +172,19 @@ export function SignupSection() {
                       className="w-full pl-10 pr-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors text-black"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-black mb-2">
+                    기타 문의사항
+                  </label>
+                  <textarea
+                    value={formData.etc}
+                    onChange={(e) => setFormData({ ...formData, etc: e.target.value })}
+                    placeholder="궁금하신 점이나 문의사항을 자유롭게 적어주세요"
+                    rows={4}
+                    className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl focus:border-purple-500 focus:outline-none transition-colors text-black resize-none"
+                  />
                 </div>
 
                 <Button

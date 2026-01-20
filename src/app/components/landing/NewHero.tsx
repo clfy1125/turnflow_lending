@@ -66,7 +66,7 @@ export function NewHero() {
               <Sparkles className="w-4 h-4" />
               곧 출시 예정
             </div>
-            <h1 className="text-[44px] md:text-[56px] font-black text-black leading-[1.2] mb-6">
+            <h1 className="text-[38px] md:text-[56px] font-black text-black leading-[1.2] mb-6">
               인스타그램 DM 마케팅
               <br />
               댓글 관리를 동시에

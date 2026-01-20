@@ -31,10 +31,6 @@ export function SimpleFooter() {
             <a href={privacyUrl || '#'} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors">
               개인정보처리방침
             </a>
-            <span className="text-gray-600">|</span>
-            <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">
-              환불 정책
-            </a>
           </div>
         </div>
 
